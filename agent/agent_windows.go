@@ -32,6 +32,7 @@ import (
 	ps "github.com/elastic/go-sysinfo"
 	"github.com/fourcorelabs/wintoken"
 	"github.com/go-ole/go-ole/oleutil"
+	"github.com/gonutz/w32/v2"
 	"github.com/kardianos/service"
 	"github.com/shirou/gopsutil/v3/disk"
 	wapf "github.com/wh1te909/go-win64api"
