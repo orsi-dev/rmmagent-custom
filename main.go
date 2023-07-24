@@ -19,7 +19,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/amidaware/rmmagent/agent"
+	"github.com/orsi-dev/rmmagent-custom"
 	"github.com/kardianos/service"
 	"github.com/sirupsen/logrus"
 )

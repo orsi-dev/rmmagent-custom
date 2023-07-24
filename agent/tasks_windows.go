@@ -19,7 +19,7 @@ import (
 	"strings"
 	"time"
 
-	rmm "github.com/amidaware/rmmagent/shared"
+	rmm "github.com/orsi-dev/rmmagent-custom/shared"
 	"github.com/amidaware/taskmaster"
 	"github.com/rickb777/date/period"
 )

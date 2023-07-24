@@ -29,7 +29,7 @@ import (
 	"unsafe"
 
 	resty "github.com/go-resty/resty/v2"
-	rmm "github.com/amidaware/rmmagent/shared"
+	rmm "github.com/orsi-dev/rmmagent-custom/shared"
 	ps "github.com/elastic/go-sysinfo"
 	"github.com/fourcorelabs/wintoken"
 	ole "github.com/go-ole/go-ole/oleutil"
@@ -799,7 +799,7 @@ func (a *Agent) GetPython(force bool) {
 		rClient.SetProxy(a.Proxy)
 	}
 
-	url := fmt.Sprintf("https://github.com/amidaware/rmmagent/releases/download/v2.0.0/%s", archZip)
+	url := fmt.Sprintf("https://github.com/orsi-dev/rmmagent-custom/releases/download/v2.0.0/%s", archZip)
 	a.Logger.Debugln(url)
 	r, err := rClient.R().SetOutput(pyZip).Get(url)
 	if err != nil {

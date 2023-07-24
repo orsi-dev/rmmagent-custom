@@ -1,4 +1,4 @@
-module github.com/orsi/rmmagent
+module github.com/orsi-dev/rmmagent
 
 go 1.20
 
@@ -35,6 +35,7 @@ require (
 )
 
 require (
+	github.com/orsi-dev/rmmagent-custom v0.0.0
 	github.com/elastic/go-windows v1.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect

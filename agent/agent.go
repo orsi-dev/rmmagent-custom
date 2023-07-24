@@ -28,7 +28,7 @@ import (
 
 	"time"
 
-	rmm "github.com/amidaware/rmmagent/shared"
+	rmm "github.com/orsi-dev/rmmagent-custom/shared"
 	ps "github.com/elastic/go-sysinfo"
 	gocmd "github.com/go-cmd/cmd"
 	"github.com/go-resty/resty/v2"
