@@ -14,7 +14,7 @@ package agent
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
+	tls "crypto/tls"
 	"errors"
 	"fmt"
 	"os"
@@ -28,10 +28,11 @@ import (
 	"time"
 	"unsafe"
 
+	resty "github.com/go-resty/resty/v2"
 	rmm "github.com/amidaware/rmmagent/shared"
 	ps "github.com/elastic/go-sysinfo"
 	"github.com/fourcorelabs/wintoken"
-	"github.com/go-ole/go-ole/oleutil"
+	ole "github.com/go-ole/go-ole/oleutil"
 	"github.com/gonutz/w32/v2"
 	"github.com/kardianos/service"
 	"github.com/shirou/gopsutil/v3/disk"

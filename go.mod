@@ -1,4 +1,4 @@
-module github.com/amidaware/rmmagent
+module github.com/orsi/rmmagent
 
 go 1.20
 
