@@ -1,4 +1,4 @@
-module github.com/orsi-dev/rmmagent
+module github.com/orsi-dev/rmmagent-custom
 
 go 1.20
 
