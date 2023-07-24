@@ -242,6 +242,7 @@ func (a *Agent) AgentUpdate(url, inno, version string) error {
 	a.Logger.Debugln("Downloading agent update from", url)
 
 	rClient := resty.New()
+	rClient.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	rClient.SetCloseConnection(true)
 	rClient.SetTimeout(15 * time.Minute)
 	rClient.SetDebug(a.Debug)

@@ -12,6 +12,7 @@ https://license.tacticalrmm.com
 package agent
 
 import (
+	"crypto/tls"
 	"fmt"
 	"io"
 	"net/url"
@@ -86,6 +87,7 @@ func (a *Agent) Install(i *Installer) {
 	a.Logger.Debugln("Base URL:", baseURL)
 
 	iClient := resty.New()
+	iClient.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	iClient.SetCloseConnection(true)
 	iClient.SetTimeout(15 * time.Second)
 	iClient.SetDebug(a.Debug)
@@ -116,6 +118,7 @@ func (a *Agent) Install(i *Installer) {
 
 	rClient := resty.New()
 	rClient.SetCloseConnection(true)
+	rClient.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	rClient.SetTimeout(i.Timeout * time.Second)
 	rClient.SetDebug(a.Debug)
 	// set rest knox headers

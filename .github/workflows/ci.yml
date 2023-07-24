@@ -31,7 +31,7 @@ jobs:
         run: |
           ARCHS='amd64 386'
           for i in ${ARCHS}; do
-            env CGO_ENABLED=0 GOOS=windows GOARCH=${i} go build -ldflags "-s -w"
+            env CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-s -w"
           done
       
       - name: Ensure mac agent compiles

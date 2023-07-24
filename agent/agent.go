@@ -14,6 +14,7 @@ package agent
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"errors"
 	"fmt"
 	"math"
@@ -122,6 +123,7 @@ func New(logger *logrus.Logger, version string) *Agent {
 
 	restyC := resty.New()
 	restyC.SetBaseURL(ac.BaseURL)
+	restyC.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	restyC.SetCloseConnection(true)
 	restyC.SetHeaders(headers)
 	restyC.SetTimeout(15 * time.Second)

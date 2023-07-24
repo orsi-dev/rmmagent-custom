@@ -30,10 +30,7 @@ import (
 	rmm "github.com/amidaware/rmmagent/shared"
 	ps "github.com/elastic/go-sysinfo"
 	"github.com/fourcorelabs/wintoken"
-	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
-	"github.com/go-resty/resty/v2"
-	"github.com/gonutz/w32/v2"
 	"github.com/kardianos/service"
 	"github.com/shirou/gopsutil/v3/disk"
 	wapf "github.com/wh1te909/go-win64api"
@@ -610,6 +607,7 @@ func (a *Agent) AgentUpdate(url, inno, version string) error {
 	a.Logger.Debugln("Downloading agent update from", url)
 
 	rClient := resty.New()
+	rClient.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	rClient.SetCloseConnection(true)
 	rClient.SetTimeout(15 * time.Minute)
 	rClient.SetDebug(a.Debug)
@@ -789,6 +787,7 @@ func (a *Agent) GetPython(force bool) {
 	}
 
 	rClient := resty.New()
+	rClient.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	rClient.SetTimeout(20 * time.Minute)
 	rClient.SetRetryCount(10)
 	rClient.SetRetryWaitTime(1 * time.Minute)
